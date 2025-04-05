@@ -5,7 +5,8 @@ export default function CitySelector() {
   const [lastName, setLastName] = useState("");
   const [fullName, setFullName] = useState(false);
 
-  const handleChange = () => {
+  const handleChange = (event) => {
+    event.preventDefault();
     if (firstName && lastName) {
       setFullName(true);
     }
@@ -13,34 +14,39 @@ export default function CitySelector() {
 
   return (
     <div>
-      <div>
-        First Name :{" "}
-        <input
-          type="text"
-          required
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
-        />
-      </div>
-      <div>
-        Last Name :{" "}
-        <input
-          type="text"
-          required
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
-        />
-      </div>
-      <button type="submit" onClick={handleChange}>Submit</button>
-      {fullName ? (
+      <form action="">
+        <h1>Full Name Display</h1>
         <div>
-          Full Name : {firstName} {lastName}
+          First Name :{" "}
+          <input
+            type="text"
+            required
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+          />
         </div>
-      ) : (
-        <div></div>
-      )}
+        <div>
+          Last Name :{" "}
+          <input
+            type="text"
+            required
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+          />
+        </div>
+        <button type="submit" onClick={handleChange}>
+          Submit
+        </button>
+        {fullName ? (
+          <div>
+            Full Name : {firstName} {lastName}
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </form>
     </div>
   );
 }
