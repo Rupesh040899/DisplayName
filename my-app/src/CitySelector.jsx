@@ -41,7 +41,7 @@ export default function CitySelector() {
         </button>
         {fullName ? (
           <div>
-            Full Name : {firstName} {lastName}
+            Full Name: {firstName} {lastName}
           </div>
         ) : (
           <div></div>
