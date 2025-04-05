@@ -33,12 +33,7 @@ export default function CitySelector() {
           }}
         />
       </div>
-      <input
-        type="submit"
-        value="Submit"
-        onClick={handleChange}
-        
-      />
+      <button onClick={handleChange}>Submit</button>
       {fullName ? (
         <div>
           Full Name : {firstName} {lastName}
