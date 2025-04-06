@@ -39,6 +39,7 @@ export default function CitySelector() {
         <button type="submit" onClick={handleChange}>
           Submit
         </button>
+        </form>
         {fullName ? (
           <div>
             Full Name: {firstName} {lastName}
@@ -46,7 +47,7 @@ export default function CitySelector() {
         ) : (
           <div></div>
         )}
-      </form>
+      
     </div>
   );
 }
