@@ -9,6 +9,8 @@ export default function CitySelector() {
     event.preventDefault();
     if (firstName && lastName) {
       setFullName(true);
+    } else {
+      setFullName(false); // Reset if either field is empty
     }
   };
 
@@ -39,15 +41,12 @@ export default function CitySelector() {
         <button type="submit" onClick={handleChange}>
           Submit
         </button>
-        </form>
-        {fullName ? (
-          <div>
-            Full Name: {firstName} {lastName}
-          </div>
-        ) : (
-          <div></div>
-        )}
-      
+      </form>
+      {fullName && (
+        <div>
+          Full Name: {firstName} {lastName}
+        </div>
+      )}
     </div>
   );
 }
